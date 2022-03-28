@@ -1,0 +1,285 @@
+<html lang="es">
+  <head>
+    <title>Valoración</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+
+    <link
+      href="https://portalciudadano.manta.gob.ec/favicon.ico "
+      rel="shortcut icon"
+      type="image/vnd.microsoft.icon"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/mdb.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/sweetalert2.min.css')}}"
+    />
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+  </head>
+
+  <body>
+    <header>
+      <section id="sp-header2-wrapper" class="">
+        <div class="row-fluid" id="header2">
+          <div id="sp-usertop1" class="span12">
+            <div class="custom">
+              <div
+                style="
+                  width: 100%;
+                  height: 10px;
+                  position: relative;
+                  display: block;
+                "
+              >
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #2c438f;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #009cdf;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #8bb53c;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #e1a01a;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #733485;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #2c438f;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intro settings -->
+      <style>
+        /* Default height for small devices */
+        #intro-example {
+          height: 400px;
+        }
+
+        /* Height for devices larger than 992px */
+        @media (min-width: 992px) {
+          #intro-example {
+            height: 600px;
+          }
+        }
+      </style>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarExample01"
+            aria-controls="navbarExample01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a href="/" class="nav-link" aria-current="page"
+                  ><img
+                    style="
+                      height: auto;
+                      max-width: 91%;
+                      margin-top: 14px;
+                      vertical-align: middle;
+                      border: 0;
+                      -ms-interpolation-mode: bicubic;
+                    "
+                    src="https://portalciudadano.manta.gob.ec/img/mantafirmes.png"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </header>
+
+    <div class="container">
+      <br />
+      <br />
+      <br />
+
+      <div class="card w-50">
+        <div class="card-body">
+          <h5 class="card-title">Clave Catastral</h5>
+          <p class="card-text" id="label_claveCata"></p>
+          <!-- <input class="card-text" id='label_claveCata'></input> -->
+          <a id="btn-save" class="btn btn-danger btn-floating mx-1">
+            <i class="fas fa-save"></i>
+          </a>
+          <a
+            id="btn-predic"
+            href="/comparacion"
+            class="btn btn-primary btn-floating mx-1"
+          >
+            <i class="fas fa-table"></i>
+          </a>
+          
+          <a id="btn-back" class="btn btn-secondary btn-floating mx-1">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <br />
+
+      <ul
+        class="nav nav-pills nav-justified mb-3"
+        id="pills-tab"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-bloques-tab"
+            data-mdb-toggle="pill"
+            href="#pills-bloques"
+            role="tab"
+            >Bloques</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-estructuras-tab"
+            data-mdb-toggle="pill"
+            href="#pills-estructuras"
+            role="tab"
+            >Estructuras</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-acabados-tab"
+            data-mdb-toggle="pill"
+            href="#pills-acabados"
+            role="tab"
+            >Acabados</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-instalaciones-tab"
+            data-mdb-toggle="pill"
+            href="#pills-instalaciones"
+            role="tab"
+            >Instalaciones</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane" id="pills-estructuras" role="tabpanel">
+          <div class="container">
+            <ul class="nav nav-pills mb-3" id="pills-bp-es" role="tablist"></ul>
+            <div class="tab-content" id="pills-tabContent-bp-es"></div>
+          </div>
+        </div>
+        <div class="tab-pane" id="pills-acabados" role="tabpanel">
+          <div class="container">
+            <ul class="nav nav-pills mb-3" id="pills-bp-ac" role="tablist"></ul>
+            <div class="tab-content" id="pills-tabContent-bp-ac"></div>
+          </div>
+        </div>
+        <div class="tab-pane" id="pills-instalaciones" role="tabpanel">
+          <div class="container">
+            <ul
+              class="nav nav-pills mb-3"
+              id="pills-bp-ins"
+              role="tablist"
+            ></ul>
+            <div class="tab-content" id="pills-tabContent-bp-ins"></div>
+          </div>
+        </div>
+        <div class="tab-pane" id="pills-bloques" role="tabpanel">
+          <div class="container">
+            <ul
+              class="nav nav-pills mb-3"
+              id="pills-bp-blo"
+              role="tablist"
+            ></ul>
+            <div class="tab-content" id="pills-tabContent-bp-blo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    {% include "footer.html" %}
+  </body>
+
+  <!-- scripts -->
+
+  <script>
+
+  </script>
+
+  <script src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/sweetalert2.min.js')}}"></script>
+
+  <script src="{{url_for('static',filename='js/event.js')}}"></script>
+</html>

@@ -1,0 +1,354 @@
+<html lang="es">
+  <head>
+    <title>Valoración</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+
+    <link
+      href="https://portalciudadano.manta.gob.ec/favicon.ico "
+      rel="shortcut icon"
+      type="image/vnd.microsoft.icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/mdb.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/sweetalert2.min.css')}}"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+  </head>
+
+  <body>
+    <header>
+      <section id="sp-header2-wrapper" class="">
+        <div class="row-fluid" id="header2">
+          <div id="sp-usertop1" class="span12">
+            <div class="custom">
+              <div
+                style="
+                  width: 100%;
+                  height: 10px;
+                  position: relative;
+                  display: block;
+                "
+              >
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #2c438f;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #009cdf;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #8bb53c;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #e1a01a;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #733485;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 16.6667%;
+                    height: 100%;
+                    float: left;
+                    background-color: #2c438f;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intro settings -->
+      <style>
+        /* Default height for small devices */
+        #intro-example {
+          height: 400px;
+        }
+
+        /* Height for devices larger than 992px */
+        @media (min-width: 992px) {
+          #intro-example {
+            height: 600px;
+          }
+        }
+      </style>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarExample01"
+            aria-controls="navbarExample01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a href="/" class="nav-link" aria-current="page"
+                  ><img
+                    style="
+                      height: auto;
+                      max-width: 91%;
+                      margin-top: 14px;
+                      vertical-align: middle;
+                      border: 0;
+                      -ms-interpolation-mode: bicubic;
+                    "
+                    src="https://portalciudadano.manta.gob.ec/img/mantafirmes.png"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </header>
+
+    <br />
+    <br />
+    <br />
+    <main>
+      <div class="container">
+        <div class="card w-100">
+          <div class="card-body">
+            <h5 class="card-title">Ingrese Clave Catastral</h5>
+            <div class="card-text w-50">
+              <input
+                type="text"
+                id="inputText"
+                placeholder="Clave Catastral"
+                class="form-control"
+              />
+              <br />
+              <button
+                type="button"
+                id="btn-search-predios"
+                class="btn btn-primary btn-floating mx-1"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+              <a
+                type="button"
+                id="btn-mod-pre"
+                class="btn btn-success btn-floating mx-1"
+                >
+                <i class="fas fa-edit"></i>
+              </a>
+              <a
+                type="button"
+                id="btn-arrow-back"
+                class="btn btn-secondary btn-floating mx-1"
+              >
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <!-- Pills navs -->
+            <ul
+              class="nav nav-pills nav-justified mb-3"
+              id="ex1"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link active"
+                  id="tab-login"
+                  data-mdb-toggle="pill"
+                  href="#pills-login"
+                  role="tab"
+                  aria-controls="pills-login"
+                  aria-selected="true"
+                  >Bloques Constructivos</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="tab-register"
+                  data-mdb-toggle="pill"
+                  href="#pills-register"
+                  role="tab"
+                  aria-controls="pills-register"
+                  aria-selected="false"
+                  >Imagenes</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="tab-dataP"
+                  data-mdb-toggle="pill"
+                  href="#pills-dataP"
+                  role="tab"
+                  aria-controls="pills-dataP"
+                  aria-selected="false"
+                  >Datos Edificacion</a
+                >
+              </li>
+            </ul>
+            <!-- Pills navs -->
+
+            <!-- Pills content -->
+            <div class="tab-content">
+              <!-- A -->
+              <div
+                class="tab-pane fade show active"
+                id="pills-login"
+                role="tabpanel"
+                aria-labelledby="tab-login"
+              >
+                <!-- inicio table-->
+                <div
+                  id="tabla_predio_pro"
+                  class="table-responsive"
+                  hidden="true"
+                >
+                  <table class="table align-middle">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">Bloque No</th>
+                        <th scope="col">Piso No</th>
+                        <th scope="col">Superficie</th>
+                        <th scope="col">Valor Reposicion</th>
+                        <th scope="col">Valor Ajustado m2</th>
+                        <th scope="col">Valor Comercial</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot class="table-dark" ></tfoot>
+                  </table>
+                </div>
+                <!-- fin table-->
+              </div>
+
+              <!-- B -->
+
+              <div
+                class="tab-pane fade"
+                id="pills-register"
+                role="tabpanel"
+                aria-labelledby="tab-register"
+              >
+                <div
+                  id="carouselExampleIndicators"
+                  class="carousel slide"
+                  data-mdb-ride="carousel"
+                >
+                  <div
+                    id="carousel-indicators"
+                    class="carousel-indicators"
+                  ></div>
+                  <div id="carousel-inner" class="carousel-inner"></div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-mdb-target="#carouselExampleIndicators"
+                    data-mdb-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-mdb-target="#carouselExampleIndicators"
+                    data-mdb-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+
+              <!--fin B -->
+              <!-- C -->
+              <div
+                class="tab-pane fade"
+                id="pills-dataP"
+                role="tabpanel"
+                aria-labelledby="tab-dataP"
+              >
+                <ul
+                  class="nav nav-pills nav-justified mb-3"
+                  id="pills-bp-c"
+                  role="tablist"
+                ></ul>
+                <div class="tab-content" id="pills-tabContent-bp-c"></div>
+              </div>
+              <!-- fin C -->
+            </div>
+            <!-- Pills content -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    {% include "footer.html" %}
+  </body>
+  <script src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/sweetalert2.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/app.js')}}"></script>
+
+</html>

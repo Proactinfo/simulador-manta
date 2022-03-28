@@ -1,0 +1,6 @@
+*__pycache__
+static/predios/*.jpg
+static/uploads/*.xlsx
+sql
+Dockerfile
+.Dockerignore
